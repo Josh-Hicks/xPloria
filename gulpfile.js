@@ -33,8 +33,8 @@ gulp.task('images', function() {
 });
 
 gulp.task('copy', function() {
-    gulp.src(['sounds'])
-        .pipe(gulp.dest('dist'))
+    gulp.src(['sounds/Creaking-door-sound.mp3', 'sounds/Loud-boom-sound.mp3', 'sounds/music.mp3', 'sounds/sheath-sword-sound.mp3', 'sounds/whoosh-transition-sound.mp3'])
+        .pipe(gulp.dest('dist/sounds/'))
 });
 
 gulp.task('watch', function() {
