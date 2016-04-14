@@ -1,0 +1,21 @@
+{
+  "name": "xPlor",
+  "version": "1.0.0",
+  "description": "Virtual game app",
+  "main": "dist/js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joshua hicks",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.1",
+    "gulp-imageoptim": "^0.3.4",
+    "gulp-sass": "^2.1.1",
+    "gulp-scss-lint": "^0.3.8",
+    "gulp-uglify": "^1.5.3",
+    "normalize.css": "^4.1.1"
+  }
+}

@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Variables / Font
+   ========================================================================== */
+@import url(https://fonts.googleapis.com/css?family=Trade+Winds);
+
+$myFont: 'Trade Winds', cursive;
+
+
+$white :#fafafa;
+$gold: lighten(#c50, 15%);
+$noon: #00EAFF;
+$evening: #9E00B2;
+$light-black: #333;
+
+/* ==========================================================================
+   Helper Classes
+   ========================================================================== */
+
+body {
+    background: $light-black;
+    font-family: $myFont;
+}
+
+// .morning {
+//     section {
+//         color: $light-black;
+//     }
+// }
+
+// .noon {
+//     section {
+//         color: $noon;
+//     }
+// }
+
+// .evening {
+//     section {
+//         color: $evening;
+//     }
+// }
+
+// .night {
+//     section {
+//         color: $gold;
+//     }
+// }
+
+
+
+main {
+    margin: 0 auto;
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+}
+
+section {
+    color: $gold;
+    display: none;
+    padding-top: 5%;
+    h1 {
+        font-size: 4em;
+        text-align: center;
+    }
+    p {
+        display: none;
+        font-size: 2em;
+        letter-spacing: 2.5px;
+    }
+    button {
+        background: transparent;
+        border: 1px solid $white;
+        color: $gold;
+        font-family: $myFont;
+        font-size: 1em;
+        padding: 5px 20px;
+        float: right;
+    }
+    input[type="text"] {
+        background: transparent;
+        border: 1px solid #fafafa;
+        box-shadow: -2px -2px 4 #fafafa inset;
+        color: #ff791a;
+        height: 1.5em;
+        padding-left: 5px;
+        position: relative;
+        width: 100px;
+        top: -3px;
+        font-size: .75em;
+        font-family: $myFont;
+    }
+    select {
+        background: transparent;
+        border: 1px solid $white;
+        color: $gold;
+        height: 25px;
+        padding: 10px;
+        position: relative;
+        top: -3px;
+        width: 75px;
+    }
+}
+
+
+#start-screen {
+    text-align: center;
+    #start-btn {
+        font-size: 2em;
+        display: none;
+        float: none;
+    }
+}
+
+#village {
+    button {
+        font-size: 1em;
+        margin-top: 50px;
+    }
+}
