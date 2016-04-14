@@ -52,6 +52,7 @@ $(function() {
         $('#start-btn').on('click', function(){
             World.init();
             // boom
+            $('audio')[1].volume = 1;
             $('audio')[1].play();
             // Scene 1: Waking up in the village.
             // change scene to Village
@@ -65,6 +66,7 @@ $(function() {
 
             setTimeout(function() {
                 //creak
+                $('audio')[2].volume = 0.25;
                 $('audio')[2].play();
             }, 9000);
         });
@@ -80,6 +82,7 @@ $(function() {
             $('#village p').fadeOut(1000);
             $('#village .four').delay(1500).fadeIn(2000);
             //sheath
+            $('audio')[3].volume = 0.75;
             $('audio')[3].play();
         });
 
@@ -89,17 +92,19 @@ $(function() {
             $('#village .five').delay(1500).fadeIn(2000)
             .next().delay(3000).fadeIn(2000);
             //whoosh
+            $('audio')[4].volume = 0.75;
             $('audio')[4].play();
         });
 
         $('#third-next-btn').on('click', function() {
-            //boom
-            $('audio')[1].play();
             $('#village .five').fadeOut(1000);
             $('#village .six').fadeOut(1000).next().delay(2000).fadeIn(1000);
         });
 
         $('#fourth-next-btn').on('click', function(){
+            //boom
+            $('audio')[1].volume = 1;
+            $('audio')[1].play();
             $('#village').removeClass('active').fadeOut(1000).next().delay(2000).fadeIn(2000);
         });
 
