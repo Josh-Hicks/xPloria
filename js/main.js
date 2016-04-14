@@ -13,8 +13,9 @@ $(function() {
 
         function new_character() {
             character = {},
-            character.name = 'JOSH',
-            character.sex = '',
+            character.name = null,
+            character.health = 100,
+            character.money = 100,
             character.weapon = null;
         }
 
@@ -47,6 +48,8 @@ $(function() {
             $('#start-screen').fadeIn(2000);
             $('#start-screen p').fadeIn(3000);
             $('#start-screen button').delay(3000).fadeIn(5000);
+            $('#start-screen .glow-ball').delay(5000).fadeIn(5000);
+            $('#start-screen #mountain-king').delay(6000).fadeIn(7000);
         }, 500)
         // when user clicks start button
         $('#start-btn').on('click', function(){
@@ -54,7 +57,11 @@ $(function() {
             // boom
             $('audio')[1].volume = 1;
             $('audio')[1].play();
-            // Scene 1: Waking up in the village.
+
+
+
+
+        // Scene 1: Waking up in the village.
             // change scene to Village
             $('.active').removeClass('active').fadeOut(500);
             $('body').addClass(now);
@@ -72,7 +79,7 @@ $(function() {
         });
 
         // prompt user for name, age, sex
-        $('#intro-next-btn').on('click', function() {
+        $('#village .first-next-btn').on('click', function() {
             var name = $('#name').val();
             if (name !== '') {
                 character.name = name;
@@ -86,7 +93,7 @@ $(function() {
             $('audio')[3].play();
         });
 
-        $('#second-next-btn').on('click', function() {
+        $('#village .second-next-btn').on('click', function() {
             $('#village .four').fadeOut(1000);
             $('#village .theName').text(character.name);
             $('#village .five').delay(1500).fadeIn(2000)
@@ -96,21 +103,37 @@ $(function() {
             $('audio')[4].play();
         });
 
-        $('#third-next-btn').on('click', function() {
+        $('#village .third-next-btn').on('click', function() {
             $('#village .five').fadeOut(1000);
             $('#village .six').fadeOut(1000).next().delay(2000).fadeIn(1000);
         });
 
-        $('#fourth-next-btn').on('click', function(){
+        $('#village .fourth-next-btn').on('click', function(){
             //boom
             $('audio')[1].volume = 1;
             $('audio')[1].play();
             $('#village').removeClass('active').fadeOut(1000).next().delay(2000).fadeIn(2000);
         });
 
+
+
+
     // Scene 2: Getting ready for the wilds.
+    $('#market .one').delay(2000).fadeIn(1000);
         // Prompt user about buying a weapon 'character.weapon'
-        // Prompt use to buy potion
+        $('#market .first-next-btn').on('click', function() {
+            $('#market .one').fadeOut(1000);
+            $('#market .two').delay(3000).fadeIn(1000);
+        });
+        // if the blacksmith button is clicked
+        $('#market #blacksmith').on('click', function() {
+            $('#market').fadeOut(1000);
+            // play armor sound effect
+
+            $('section #blacksmith').fadeIn(1000);
+
+        });
+
         // Prompt user to leave village
 
     // Scene 3: The open plains.

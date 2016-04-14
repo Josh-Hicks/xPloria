@@ -7,7 +7,7 @@ $myFont: 'Trade Winds', cursive;
 
 
 $white :#fafafa;
-$gold: lighten(#c50, 15%);
+$gold: #ff791a;
 $noon: #00EAFF;
 $evening: #9E00B2;
 $light-black: #333;
@@ -109,6 +109,23 @@ section {
         display: none;
         float: none;
     }
+    .king-container {
+        position: relative;
+        width: 225px;
+        margin: 100px auto;
+    }
+    #mountain-king {
+        display: none;
+        width: 198px;
+        margin: 10% auto;
+    }
+
+    div[class^="glow-ball"] {
+        background: $white;
+        height: 15px;
+        position: absolute;
+        width: 15px;
+    }
 }
 
 #village {
@@ -116,4 +133,46 @@ section {
         font-size: 1em;
         margin-top: 50px;
     }
+}
+
+#market {
+    #blacksmith,
+    #apothecary {
+        background: transparent;
+        border: 1px solid #fafafa;
+        color: #ff791a;
+        float: none;
+        font-family: "Trade Winds",cursive;
+        font-size: 1em;
+        padding: 5px 20px;
+        margin-top: 30px;
+    }
+}
+
+#blacksmith {
+    .player-money {
+        float: right;
+    }
+    #armor,
+    #weapons, {
+        width: 100%;
+        ul {
+            li {
+                display: block;
+                height: 50px;
+                font-size: 1em;
+                @media screen and (min-width: 768px) {
+                    display: inline-block;
+                }
+            }
+        }
+        @media screen and (min-width: 768px) {
+            width: 45%;
+            margin: 1%;
+        }
+    }
+}
+
+#apothecary {
+
 }

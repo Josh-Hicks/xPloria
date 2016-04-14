@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>xPloria</title>
-    <link rel="stylesheet" href="dist/css/styles.css">
+    <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
 
@@ -12,6 +12,13 @@
             <h1>xPloria</h1>
             <p>- A world of adventure -</p>
             <button id="start-btn">Start Game</button>
+            <div class="king-container">
+                <div id="mountain-king"></div>
+                <div class="glow-ball one"></div>
+                <div class="glow-ball two"></div>
+                <div class="glow-ball three"></div>
+                <div class="glow-ball four"></div>
+            </div>
         </section>
 
         <section id="village">
@@ -25,25 +32,79 @@
                 <q>Uhh... I'm
                 <input type="text" id="name"> from the other side of the village.  The last thing I remember I was out clearing monsters from the village perimeter.  I came upon an old man, but when I approached he faded out of sight like a cloud in the wind.  I fell to the ground and woke up here...</q>
                 <br>
-                <button id="intro-next-btn">Next</button>
+                <button class="first-next-btn">Next</button>
             </p>
             <p class="four">The villager reluctantly sheaths his sword and steps back.  He looks longingly toward the distant mountains and says <q>I've heard tales of such things in my youth.  Now more than ever, the creatures around these lands seem to be restless and full of hate.  I fear <u>the one who rules the mountain</u> may have returned after all these years.</q>
             <br>
-            <button id="second-next-btn">Next</button>
+            <button class="second-next-btn">Next</button>
             </p>
             <p class="five"><q>Who is this "mountain king" you speak of,</q> you ask.</p>
             <p class="six">The villager looks you in the eyes and whispers, <q>He is the destroyer of worlds, and the bringer of doom.  If he has indeed returned from the dead... our village is in grave danger.  Return home now <span class="theName"></span>.  I have much work to do here.</q>
             <br>
-            <button id="third-next-btn">Next</button>
+            <button class="third-next-btn">Next</button>
             </p>
             <p class="seven"><q>I will find the answers I seek.  If The Mountain King really has returned... I will destroy him.</q>
             <br>
-            <button id="fourth-next-btn">Next</button>
+            <button class="fourth-next-btn">Next</button>
             </p>
         </section>
 
         <section id="market">
             <h1>The Market</h1>
+
+            <p class="one">Your quest has been laid out before you.  You will seek out The Mountain King and destroy him.  However, you can't rush into the xPlorian wild without weapons and supplies.  Head to The Market to gather supplies.
+            <br>
+            <button class="first-next-btn">Next</button>
+            </p>
+
+            <p class="two">Here at The Market you find many different vendors.  Choose a shop to enter.
+            <br>
+            <button id="blacksmith">Blacksmith</button>
+            <br>
+            <button id="apothecary">Apothecary</button>
+            </p>
+
+        </section>
+
+        <section id="blacksmith">
+            <h1>Iron Forge Armory</h1>
+            <p class="player-money">Total Money: &#x20B9; <span class="amount">50</span></p>
+
+            <p class="one">Welcome to the Iron Forge!  Here we sell the finest weapons and armor this side of the mountain.  Please take a look at our wares.</p>
+
+            <div id="armor">
+                <ul>
+                    <li class="item">
+                        <div id="leather-cap"></div>
+                        <span class="name">Leather Cap</span> - Defense: <span class="defense">5</span> - Price: <span class="price">&#x20B9; 10</span>
+                        <br>
+                        <button class="item-btn">Buy</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="weapons">
+                <ul>
+                    <li class="item">
+                        <div id="sword"></div>
+                        <span class="name">Sword</span> - Damage: <span class="damage">&plus;10</span> - Price: <span class="price">&#x20B9; 20</span>
+                        <br>
+                        <button class="item-btn">Buy</button>
+                    </li>
+                    <li class="item">
+                        <div id="axe"></div>
+                        <span class="name">Axe</span> - Damage: <span class="damage">&plus;10</span> - Price: <span class="price">&#x20B9; 20</span>
+                        <br>
+                        <button class="item-btn">Buy</button>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section id="apothecary">
+            <h1>Black Moon Apothecary</h1>
+
         </section>
 
         <section id="plains"></section>
