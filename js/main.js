@@ -1,10 +1,14 @@
 'use strict';
 
+
 $(function() {
     var character,
         d,
         time,
-        now;
+        now,
+        weapons,
+        potions,
+        armor;
     // background music
     $('audio')[0].currentTime = 10;
     $('audio')[0].play();
@@ -16,7 +20,8 @@ $(function() {
             character.name = null,
             character.health = 100,
             character.money = 100,
-            character.weapon = null;
+            character.weapon = null,
+            character.potions = 0;
         }
 
         function init() {
@@ -41,6 +46,67 @@ $(function() {
         };
 
     } )();
+
+    var Items = (function(){
+        weapons = [
+            {
+                item:  'Paladin Sword',
+                damage: 10,
+                price:  40
+            },
+            {
+                item:  'Battle Axe',
+                damage: 20,
+                price:  60
+            },
+            {
+                item:  'War Club',
+                damage: 30,
+                price:  80
+            }
+        ];
+
+        armor = [
+            {
+                item:  'Leather Cap',
+                defense: 10,
+                price:  10
+            },
+            {
+                item:  'Battle Armor',
+                defense: 40,
+                price:  40
+            },
+            {
+                item:  'Sheild',
+                defense: 30,
+                price:  30
+            }
+        ];
+
+        potions = [
+            {
+                item:  'Healing Potion',
+                health: 10,
+                price:  20
+            },
+            {
+                item:  'Healing Potion',
+                health: 10,
+                price:  20
+            },
+            {
+                item:  'Healing Potion',
+                health: 10,
+                price:  20
+            },
+            {
+                item:  'Healing Potion',
+                health: 10,
+                price:  20
+            }
+        ];
+    })();
 
     // Game start
         // show start screen
@@ -130,11 +196,47 @@ $(function() {
             $('#market').fadeOut(1000);
             // play armor sound effect
 
-            $('section #blacksmith').fadeIn(1000);
+            // add weapons and armor to dom
+
+            $('#blacksmith-store').delay(2000).fadeIn(1000);
+
+        });
+        // if the apothecary button is clicked
+        $('#market #apothecary').on('click', function() {
+            $('#market').fadeOut(1000);
+            // play bubble sound effect
+
+            // add potions to dom
+            item = '';
+            for (i = 0; i < Items.potions.length; i++) {
+               item += '<li class="item"> Item: ' + Items[i].item + '<br> Health: &plus;' +  Items[i].health + '<br> Price: &#x20B9;' +  Items[i].price + '</li>';
+               $('#potions ul').append(item);
+            }
+
+            $('#apothecary-store').delay(2000).fadeIn(000);
 
         });
 
-        // Prompt user to leave village
+        // Shopping Functionality
+
+
+        // when the user is done
+        $('#done-shopping').on('click', function() {
+            // boom
+            $('audio')[1].play();
+            $(this).closest('section').fadeOut(1000);
+            $('#market').delay(2000).fadeIn(1000);
+            $('#market .two').delay(3000).fadeIn(1000);
+            if (character.weapon !== null && character.potions > 0) {
+                $('#to-plains').delay(3000).fadeIn(1000);
+            }
+        });
+
+        // if the user is ready to leave the village
+        $('#to-plains').on('click', function() {
+            $(this).closest('section').fadeOut(1000);
+            $('#plains').delay(2000).fadeIn(1000);
+        });
 
     // Scene 3: The open plains.
         // prompt user about where to travel
@@ -150,4 +252,4 @@ $(function() {
 
 
 
-}());
+}()); //end jquery
