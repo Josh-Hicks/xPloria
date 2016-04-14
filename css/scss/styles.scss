@@ -149,7 +149,8 @@ section {
     }
 }
 
-#blacksmith {
+#blacksmith-store,
+#apothecary-store {
     .player-money {
         float: right;
     }
@@ -157,11 +158,17 @@ section {
     #weapons, {
         width: 100%;
         ul {
+            list-style: none;
+            width: 100%;
             li {
                 display: block;
                 height: 50px;
                 font-size: 1em;
                 @media screen and (min-width: 768px) {
+                    display: inline-block;
+                }
+
+                button {
                     display: inline-block;
                 }
             }
@@ -173,6 +180,6 @@ section {
     }
 }
 
-#apothecary {
+#apothecary-store {
 
 }
