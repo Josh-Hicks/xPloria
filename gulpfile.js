@@ -21,7 +21,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('uglify', function() {
-  return gulp.src('js/*.js')
+  return gulp.src(['bower_components/jquery/dist/jquery.min.js', 'js/*.js'])
     .pipe(uglify())
     .pipe(gulp.dest('dist/js'));
 });
