@@ -71,11 +71,13 @@ $(function() {
 
         // prompt user for name, age, sex
         $('#intro-next-btn').on('click', function() {
-            character.name = $('#name').val();
-            character.sex = $('#sex').val();
+            var name = $('#name').val();
+            if (name !== '') {
+                character.name = name;
+            } else {
+                character.name = 'Ragnar';
+            }
             $('#village p').fadeOut(1000);
-            console.log(character.name);
-            console.log(character.sex);
             $('#village .four').delay(1500).fadeIn(2000);
             //sheath
             $('audio')[3].play();
