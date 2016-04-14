@@ -32,9 +32,14 @@ gulp.task('images', function() {
         .pipe(gulp.dest('dist/images'))
 });
 
+gulp.task('copy', function() {
+    gulp.src(['sounds'])
+        .pipe(gulp.dest('dist'))
+});
+
 gulp.task('watch', function() {
     gulp.watch('css/scss/*.scss', ['scss-lint', 'sass']);
     gulp.watch('js/*.js', ['uglify']);
 });
 
-gulp.task('default', ['images', 'uglify', 'scss-lint', 'sass', 'watch']);
+gulp.task('default', ['images', 'uglify', 'scss-lint', 'sass', 'copy', 'watch']);
