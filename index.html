@@ -23,30 +23,39 @@
 
         <section id="village">
             <h1>The Village</h1>
+
             <p class="one">You awaken in your small village after a wild night of adventuring.  Only... you're not in your bed.  A fellow villager finds you covered in blood, sleeping in his barn.</p>
             <p class="two">Startled, the villager yells, <q>Aaaahhh! What kind of demon is this?</q>
             <br>
             <br>
             You reply: </p>
+
             <p class="three">
                 <q>Uhh... I'm
                 <input type="text" id="name"> from the other side of the village.  The last thing I remember I was out clearing monsters from the village perimeter.  I came upon an old man, but when I approached he faded out of sight like a cloud in the wind.  I fell to the ground and woke up here...</q>
                 <br>
                 <button class="first-next-btn">Next</button>
             </p>
+
             <p class="four">The villager reluctantly sheaths his sword and steps back.  He looks longingly toward the distant mountains and says <q>I've heard tales of such things in my youth.  Now more than ever, the creatures around these lands seem to be restless and full of hate.  I fear <u>the one who rules the mountain</u> may have returned after all these years.</q>
-            <br>
-            <button class="second-next-btn">Next</button>
+                <div id="villager"></div>
+                <h3>- Villager -</h3>
+                <br>
+                <button class="next-btn-two">Next</button>
             </p>
+
             <p class="five"><q>Who is this "mountain king" you speak of,</q> you ask.</p>
+
             <p class="six">The villager looks you in the eyes and whispers, <q>He is the destroyer of worlds, and the bringer of doom.  If he has indeed returned from the dead... our village is in grave danger.  Return home now <span class="theName"></span>.  I have much work to do here.</q>
             <br>
             <button class="third-next-btn">Next</button>
             </p>
+
             <p class="seven"><q>I will find the answers I seek.  If The Mountain King really has returned... I will destroy him.</q>
             <br>
             <button class="fourth-next-btn">Next</button>
             </p>
+
         </section>
 
         <section id="market">
@@ -57,7 +66,14 @@
             <button class="first-next-btn">Next</button>
             </p>
 
-            <p class="two">Here at The Market you find many different vendors.  Choose a shop to enter.
+            <p class="two-b">Your quest has been laid out before you.  You will seek out The Mountain King and destroy him.  However, you can't rush into the xPlorian wild without weapons and supplies.  Are you ready to leave the village?
+            <br>
+            <button class="first-next-btn">Back to Market</button>
+            <br>
+            <button id="to-plains">Exit Village</button>
+            </p>
+
+            <p class="two-a">Here at The Market you find many different vendors.  Choose a shop to enter.
             <br>
             <button id="blacksmith">Blacksmith</button>
             <br>
@@ -66,48 +82,71 @@
 
         </section>
 
-        <section id="blacksmith">
+        <section id="blacksmith-store">
             <h1>Iron Forge Armory</h1>
             <p class="player-money">Total Money: &#x20B9; <span class="amount">50</span></p>
 
             <p class="one">Welcome to the Iron Forge!  Here we sell the finest weapons and armor this side of the mountain.  Please take a look at our wares.</p>
 
-            <div id="armor">
+            <div id="armor-list">
+                <h2>- Armor -</h2>
                 <ul>
                     <li class="item">
                         <div id="leather-cap"></div>
                         <span class="name">Leather Cap</span> - Defense: <span class="defense">5</span> - Price: <span class="price">&#x20B9; 10</span>
-                        <br>
+                        <button class="item-btn">Buy</button>
+                    </li>
+                    <li class="item">
+                        <div id="armor"></div>
+                        <span class="name">Armor</span> - Defense: <span class="defense">20</span> - Price: <span class="price">&#x20B9; 30</span>
+                        <button class="item-btn">Buy</button>
+                    </li>
+                    <li class="item">
+                        <div id="shield"></div>
+                        <span class="name">Sheild</span> - Defense: <span class="defense">10</span> - Price: <span class="price">&#x20B9; 30</span>
                         <button class="item-btn">Buy</button>
                     </li>
                 </ul>
             </div>
 
-            <div id="weapons">
+            <div id="weapons-list">
+                <h2>- Weapons -</h2>
                 <ul>
                     <li class="item">
                         <div id="sword"></div>
                         <span class="name">Sword</span> - Damage: <span class="damage">&plus;10</span> - Price: <span class="price">&#x20B9; 20</span>
-                        <br>
                         <button class="item-btn">Buy</button>
                     </li>
                     <li class="item">
                         <div id="axe"></div>
                         <span class="name">Axe</span> - Damage: <span class="damage">&plus;10</span> - Price: <span class="price">&#x20B9; 20</span>
-                        <br>
                         <button class="item-btn">Buy</button>
                     </li>
                 </ul>
             </div>
-
+            <button id="done-shopping">Done</button>
         </section>
 
-        <section id="apothecary">
+        <section id="apothecary-store">
             <h1>Black Moon Apothecary</h1>
-
+            <p class="player-money">Total Money: &#x20B9; <span class="amount">50</span></p>
+            <p class="one">Welcome to the Black Moon Apothecary!  Here we sell the finest potions this side of the mountain.  Please take a look at our wares.</p>
+            <div id="potions-list">
+                <h2>- Potions -</h2>
+                <ul>
+                    <li class="item">
+                        <div id="leather-cap"></div>
+                        <span class="name">Healing Potion</span> - Health: <span class="health">10</span> - Price: <span class="price">&#x20B9; 20</span>
+                        <button class="item-btn">Buy</button>
+                    </li>
+                </ul>
+            </div>
+            <button id="done">Done</button>
         </section>
 
-        <section id="plains"></section>
+        <section id="plains">
+            <h1>The Plains</h1>
+        </section>
 
         <section id="caves"></section>
 
@@ -117,8 +156,8 @@
 
         <section id="end-screen"></section>
 
-        <audio id="music" loop="true" loop preload>
-            <source src="dist/sounds/intro.mp3" type="audio/mp3">
+        <audio id="music" loop="true" loop>
+            <source src="dist/sounds/music.mp3" type="audio/mp3">
         </audio>
         <audio id="boom">
             <source src="dist/sounds/loud-boom-sound.mp3" type="audio/mp3">
