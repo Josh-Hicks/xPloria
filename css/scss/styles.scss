@@ -190,6 +190,10 @@ section {
                     margin: 5%;
                 }
 
+                &div:first-child {
+                    margin: 0 auto;
+                }
+
                 button {
                     display: inline-block;
                     margin-left: 20px;

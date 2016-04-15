@@ -205,8 +205,6 @@ $(function() {
             // add weapons and armor to dom
 
             $('#blacksmith-store').delay(2000).fadeIn(1000);
-<<<<<<< HEAD
-=======
 
         });
         // if the apothecary button is clicked
@@ -222,7 +220,6 @@ $(function() {
             }
 
             $('#apothecary-store').delay(2000).fadeIn(000);
->>>>>>> gh-pages
 
         });
         // if the apothecary button is clicked
@@ -237,13 +234,10 @@ $(function() {
                $('#potions ul').append(item);
             }
 
-<<<<<<< HEAD
             $('#apothecary-store').delay(2000).fadeIn(000);
 
         });
 
-=======
->>>>>>> gh-pages
         // Shopping Functionality
 
 
@@ -252,18 +246,11 @@ $(function() {
             // boom
             $('audio')[1].play();
             $(this).closest('section').fadeOut(1000);
-<<<<<<< HEAD
-            $('#market').delay(2000).fadeIn(1000);
-            $('#market .two').delay(3000).fadeIn(1000);
-            if (character.weapon !== null && character.potions > 0) {
-                $('#to-plains').delay(3000).fadeIn(1000);
-=======
             $('#market ').delay(2000).fadeIn(1000);
             $('#market .two-a').hide();
             $('#market .two-b').delay(2000).fadeIn(1000);
             if (character.weapon !== null && character.potions > 0) {
                 $('#to-plains').fadeIn(1000);
->>>>>>> gh-pages
             }
         });
 
