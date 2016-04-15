@@ -21,7 +21,9 @@ $(function() {
             character.health = 100,
             character.money = 100,
             character.weapon = null,
-            character.potions = 0;
+            character.potions = 0,
+            character.defense = 0
+            character.attack = 0;
         }
 
         function init() {
@@ -239,6 +241,34 @@ $(function() {
         });
 
         // Shopping Functionality
+            // When the user clicks the buy button
+            $('.buy').on('click', function() {
+                var itemCost = parseInt($(this).siblings('.price').text());
+                console.log(itemCost);
+                if (character.money < itemCost) {
+                    character.money = character.money - itemCost;
+                    boost_stats($(this));
+                } else {
+                    alert('You can\'t afford this item.');
+                    console.log(character.money);
+                }
+            });
+            // add the stats boost
+            function boost_stats(item) {
+                if (item.hasClass('armor-buy')) {
+                    var itemDef = parseInt($(this).siblings('.defense').text());
+                    character.defense += itemDef;
+                    console.dir(character);
+                } else if (item.hasClass('weapon-buy')) {
+                    var itemAtt = parseInt($(this).siblings('.damage').text());
+                    character.attack += itemAtt;
+                    console.dir(character);
+                } else if (item.hasClass('potion-buy')) {
+                    character.potions++;
+                    console.dir(character);
+                }
+            }
+
 
 
         // when the user is done
